@@ -1,0 +1,156 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #e0ebe5;
+  background: #0a100e;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.command-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 48px);
+}
+
+.shell-header,
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.shell-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow,
+.status,
+.panel-heading {
+  font-family: monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.eyebrow {
+  color: #9ebaac;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 36px);
+  letter-spacing: 0.04em;
+}
+
+.status {
+  padding: 10px 12px;
+  border: 1px solid #446453;
+  color: #b6d6c3;
+}
+
+section {
+  border: 1px solid #365043;
+}
+
+.panel-heading {
+  padding: 16px;
+  background: #17241d;
+  color: #adc4b7;
+}
+
+h2 {
+  margin: 0;
+  font: inherit;
+}
+
+.game-viewport {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #101916;
+}
+
+.game-viewport canvas {
+  display: block;
+}
+
+footer {
+  margin-top: 24px;
+  color: #adc4b7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.workspace > * {
+  min-width: 0;
+}
+
+.mission-brief,
+.order-panel,
+.orders-panel,
+.intel-panel,
+.trace-panel,
+.event-panel {
+  padding: 18px;
+  margin-bottom: 20px;
+  background: #101b15;
+}
+
+.mission-brief { border-left: 3px solid #afbd78; }
+.mission-brief p { margin: 8px 0; line-height: 1.5; }
+small { color: #a8c0af; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 16px 0; }
+.toolbar span { margin-left: auto; font-size: 13px; color: #adc4b7; }
+button, select, input { font: inherit; color: #e0ebe5; border: 1px solid #476451; border-radius: 3px; background: #1c3025; padding: 9px; }
+button { cursor: pointer; }
+button:hover:not(:disabled), button[aria-pressed="true"] { border-color: #b6d59a; background: #34523b; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid #e1d38b; outline-offset: 3px; }
+label { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; font-size: 13px; color: #c2d5c8; }
+select, input { width: 100%; min-width: 0; }
+.coordinates { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.roster { display: flex; gap: 6px; margin-top: 16px; }
+.roster button { flex: 1; padding: 8px 4px; font-size: 12px; }
+.roster small, .order-row small { display: block; margin-top: 5px; }
+.operator-stats { font-size: 12px; line-height: 1.6; color: #adc4b7; }
+.primary { width: 100%; margin-top: 18px; border-color: #a1bc7d; background: #34513a; }
+.order-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #2e4436; font-size: 13px; }
+.trace-line { display: block; margin: 6px 0; }
+.event-panel ol { padding-left: 22px; max-height: 340px; overflow-y: auto; font-size: 12px; line-height: 1.7; }
+.event-panel li { margin-bottom: 8px; }
+.error { padding: 14px; border: 1px solid #c78172; background: #3e2420; }
+.intel-panel p, .trace-panel p { font-size: 13px; line-height: 1.6; }
+.inline-label { flex-direction: row; align-items: center; margin: 0; }
+.inline-label input { width: 130px; }
+.inline-label select { width: auto; }
+.objectives { display: flex; flex-wrap: wrap; gap: 20px; padding: 14px; margin-bottom: 20px; font-size: 13px; color: #b6d59a; }
+.decision-panel, .debrief, .replay-panel { padding: 18px; margin-bottom: 20px; background: #14251b; }
+.decision-panel { border-color: #dfcd83; background: #2a2a19; }
+.decision-panel p, .debrief p { font-size: 14px; line-height: 1.6; }
+.replay-panel small { display: block; max-width: 90ch; line-height: 1.6; }
+.replay-panel summary { cursor: pointer; color: #c4d9b8; font-size: 14px; }
+.replay-panel input[type="file"] { max-width: 450px; }
+code { color: #e6d49b; overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+  .toolbar span { margin-left: 0; }
+}
