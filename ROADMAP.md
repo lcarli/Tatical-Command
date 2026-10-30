@@ -21,7 +21,8 @@ is configured in [.github/workflows/ci.yml](.github/workflows/ci.yml); its live
 status is available in the repository's Actions tab.
 
 ## Next task — Manual Blackwood playtest
-This is the next validation step, not an approved implementation task 008.
+This remains the next gameplay validation step. A separate visual-kit task 008
+was authorized on 2026-10-30; it does not replace this playtest.
 
 1. Run the sample plan with ADAPTIVE autonomy; evaluate the critical pause,
    continue or replan, and read the debrief.
@@ -35,6 +36,13 @@ This is the next validation step, not an approved implementation task 008.
 
 Manual gameplay validation is still pending. Do not start campaign/progression
 or invent new systems to address untested assumptions.
+
+## Visual kit — Task 008
+[Task 008](tasks/008-blackwood-art-kit.md) establishes the Blackwood visual kit.
+The scene reference and [art direction](docs/ART_DIRECTION.md) are delivered.
+Four normalized static character sprites are connected to the Phaser renderer,
+preserving abstract markers for uncertain/stale contacts. Floor and architectural
+sources remain drafts pending geometry and matte refinement.
 
 ## Known prototype limits
 - Art, timing, utility weights and balance are provisional.

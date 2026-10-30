@@ -2,6 +2,10 @@ import { expect, test } from '@playwright/test';
 
 test('shows the titled shell and one Phaser canvas without runtime errors', async ({ page }) => {
   const errors: string[] = [];
+  const loadedCharacters = new Set<string>();
+  page.on('response', (response) => {
+    if (response.ok() && response.url().includes('/assets/blackwood/characters/')) loadedCharacters.add(response.url());
+  });
   page.on('pageerror', (error) => errors.push(error.message));
 
   await page.goto('/');
@@ -13,6 +17,7 @@ test('shows the titled shell and one Phaser canvas without runtime errors', asyn
   await expect(viewport).toBeVisible();
   await expect(viewport.locator('canvas')).toHaveCount(1);
   await expect(viewport.locator('canvas')).toBeVisible();
+  await expect.poll(() => loadedCharacters.size).toBe(4);
   expect(errors).toEqual([]);
 });
 

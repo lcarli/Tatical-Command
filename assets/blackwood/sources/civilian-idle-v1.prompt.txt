@@ -1,0 +1,5 @@
+Use case: stylized-concept
+Asset type: isolated game asset source PNG for Blackwood.
+Reference image role: character/style/material/palette reference only; do not reproduce the full scene.
+Exactly ONE isolated full-body adult civilian matching the reference, ochre everyday jacket, brown trousers and dark shoes, short dark hair, unarmed, relaxed neutral idle pose facing screen bottom-right (southeast). No tactical gear. Broad readable stylized low-poly silhouette, similar body scale to reference operator. Orthographic isometric elevated camera consistent with floor diamond ratio 68:38. Full body visible with margin. No floor, base, markers or cast ground shadow. Transparent background.
+Style: restrained stylized matte low-poly game render, crisp silhouette, soft upper-left light, no bloom, no text, no watermark. Genuine transparent background. Standalone source, not an atlas.

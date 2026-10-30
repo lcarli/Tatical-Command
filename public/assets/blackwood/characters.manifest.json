@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "status": "integration-candidate",
+  "pixelRatio": 2,
+  "assets": [
+    {
+      "id": "bravo-1-idle",
+      "file": "characters/bravo-1-idle.png",
+      "source": "assets/blackwood/sources/bravo-1-idle-v1.png",
+      "sourceSha256": "5ae7744023b43251b30d6996fd62b1a2a08de8ada88a385d950b25aa935c0ca7",
+      "width": 96,
+      "height": 128,
+      "displayWidth": 48,
+      "displayHeight": 64,
+      "anchor": {
+        "y": 112,
+        "x": 48
+      },
+      "origin": {
+        "y": 0.875,
+        "x": 0.5
+      },
+      "facing": "screen-southeast",
+      "animation": "idle-static",
+      "sourceCrop": {
+        "width": 494,
+        "y": 120,
+        "height": 1052,
+        "x": 383
+      },
+      "destinationRect": {
+        "width": 45,
+        "y": 16,
+        "height": 96,
+        "x": 25
+      }
+    },
+    {
+      "id": "bravo-2-idle",
+      "file": "characters/bravo-2-idle.png",
+      "source": "assets/blackwood/sources/bravo-2-idle-v1.png",
+      "sourceSha256": "317c72ee9b906f86fa22d3e91dbbb4d555bf5e6c02a5e0e63145a059b27667b2",
+      "width": 96,
+      "height": 128,
+      "displayWidth": 48,
+      "displayHeight": 64,
+      "anchor": {
+        "y": 112,
+        "x": 48
+      },
+      "origin": {
+        "y": 0.875,
+        "x": 0.5
+      },
+      "facing": "screen-southeast",
+      "animation": "idle-static",
+      "sourceCrop": {
+        "width": 447,
+        "y": 127,
+        "height": 1045,
+        "x": 419
+      },
+      "destinationRect": {
+        "width": 41,
+        "y": 16,
+        "height": 96,
+        "x": 27
+      }
+    },
+    {
+      "id": "bravo-3-idle",
+      "file": "characters/bravo-3-idle.png",
+      "source": "assets/blackwood/sources/bravo-3-idle-v1.png",
+      "sourceSha256": "cf1eea2b8bb716ef2021e6cbc08aadc40891c2537c0923a755e2c3e1d2bca215",
+      "width": 96,
+      "height": 128,
+      "displayWidth": 48,
+      "displayHeight": 64,
+      "anchor": {
+        "y": 112,
+        "x": 48
+      },
+      "origin": {
+        "y": 0.875,
+        "x": 0.5
+      },
+      "facing": "screen-southeast",
+      "animation": "idle-static",
+      "sourceCrop": {
+        "width": 548,
+        "y": 122,
+        "height": 1072,
+        "x": 336
+      },
+      "destinationRect": {
+        "width": 49,
+        "y": 16,
+        "height": 96,
+        "x": 23
+      }
+    },
+    {
+      "id": "civilian-idle",
+      "file": "characters/civilian-idle.png",
+      "source": "assets/blackwood/sources/civilian-idle-v1.png",
+      "sourceSha256": "854186836f8726bb4ce1d498a112d97befd19b65f4467caf1df76974b36111a2",
+      "width": 96,
+      "height": 128,
+      "displayWidth": 48,
+      "displayHeight": 64,
+      "anchor": {
+        "y": 112,
+        "x": 48
+      },
+      "origin": {
+        "y": 0.875,
+        "x": 0.5
+      },
+      "facing": "screen-southeast",
+      "animation": "idle-static",
+      "sourceCrop": {
+        "width": 401,
+        "y": 109,
+        "height": 1076,
+        "x": 425
+      },
+      "destinationRect": {
+        "width": 36,
+        "y": 16,
+        "height": 96,
+        "x": 30
+      }
+    }
+  ]
+}

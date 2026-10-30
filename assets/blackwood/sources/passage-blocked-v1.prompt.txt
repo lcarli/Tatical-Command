@@ -1,0 +1,5 @@
+Use case: stylized-concept
+Asset type: Blackwood isolated architectural game asset source.
+Input image is style/material reference only; do not reproduce scene.
+Exactly one isolated blocked office doorway module matching reference rubble-blocked alternate passage. Charcoal doorframe with gray rubble contained inside the opening, two muted brown crossed timber planks, no debris spilling into neighboring cells. Doorway plane runs screen lower-left to upper-right (+34,-19), vertical jambs. Full module visible with margin, no surrounding walls, floor platform, people or signs. Simple broad shapes legible when small.
+Orthographic isometric, floor diamond ratio 68:38, restrained matte low-poly materials, sage gray/charcoal/brown palette, soft upper-left lighting. Centered with margin. Genuine transparent background, no baked shadow halo, text, watermark or background.

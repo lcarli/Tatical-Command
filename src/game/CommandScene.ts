@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import type { PlayerView, Position } from '../simulation/core/types';
 import { samePosition } from '../simulation/world/grid';
 import { SEARCH_ROOM, TARGET_ROOM } from '../content/missions/blackwood';
+import { CHARACTER_TEXTURES, contactTexture } from './characterArt';
 
 export type ViewportBridge = {
   view: PlayerView;
@@ -19,6 +20,12 @@ export class CommandScene extends Phaser.Scene {
 
   constructor(private readonly readBridge: () => ViewportBridge) {
     super('command');
+  }
+
+  preload(): void {
+    for (const texture of [...Object.values(CHARACTER_TEXTURES), 'civilian-idle']) {
+      this.load.image(texture, `${import.meta.env.BASE_URL}assets/blackwood/characters/${texture}.png`);
+    }
   }
 
   create(): void {
@@ -72,22 +79,34 @@ export class CommandScene extends Phaser.Scene {
     for (const intel of view.intel) {
       const screen = project(intel.position);
       const stale = intel.level === 'STALE';
-      const marker = this.add.rectangle(screen.x, screen.y - 9, 17, 22, stale ? 0x596760 : intel.behavior === 'HOSTILE' || intel.behavior === 'THREATENING' ? 0xdb855f : 0xe7d386).setStrokeStyle(2, 0x121c16);
+      const texture = contactTexture(intel);
+      const marker = texture && this.textures.exists(texture)
+        ? this.add.image(screen.x, screen.y, texture).setDisplaySize(48, 64).setOrigin(0.5, 0.875)
+        : this.add.rectangle(screen.x, screen.y - 9, 17, 22, stale ? 0x596760 : intel.behavior === 'HOSTILE' || intel.behavior === 'THREATENING' ? 0xdb855f : 0xe7d386).setStrokeStyle(2, 0x121c16);
+      marker.setDepth(screen.y);
+      if (marker instanceof Phaser.GameObjects.Image && intel.behavior === 'INCAPACITATED') marker.setTint(0x915c56);
       overlay.add(marker);
-      overlay.add(this.add.text(screen.x, screen.y - 36, `${intel.identity ?? 'CONTACT'}${stale ? ' ?' : ''}`, { fontFamily: 'monospace', fontSize: '10px', color: '#e7d386' }).setOrigin(0.5));
+      overlay.add(this.add.text(screen.x, screen.y - 58, `${intel.identity ?? 'CONTACT'}${stale ? ' ?' : ''}`, { fontFamily: 'monospace', fontSize: '10px', color: '#e7d386' }).setOrigin(0.5).setDepth(1000 + screen.y));
     }
     for (const operator of view.operators) {
       const screen = project(operator.position);
-      const marker = this.add.circle(screen.x, screen.y - 10, selected === operator.id ? 13 : 10, operator.operational ? 0x81d0a4 : 0x915c56)
-        .setStrokeStyle(selected === operator.id ? 3 : 1, selected === operator.id ? 0xe5f9ec : 0x284633)
-        .setInteractive()
-        .on('pointerdown', () => this.readBridge().onSelect(operator.id));
+      const texture = CHARACTER_TEXTURES[operator.id];
+      const selectedOperator = selected === operator.id;
+      overlay.add(this.add.ellipse(screen.x, screen.y, selectedOperator ? 30 : 22, selectedOperator ? 15 : 11, operator.operational ? 0x284633 : 0x915c56, 0.8)
+        .setStrokeStyle(selectedOperator ? 2 : 1, selectedOperator ? 0xe5f9ec : 0x81d0a4).setDepth(screen.y - 1));
+      const marker = texture && this.textures.exists(texture)
+        ? this.add.image(screen.x, screen.y, texture).setDisplaySize(48, 64).setOrigin(0.5, 0.875)
+          .setInteractive(new Phaser.Geom.Rectangle(16, 14, 64, 100), Phaser.Geom.Rectangle.Contains)
+        : this.add.circle(screen.x, screen.y - 10, 10, operator.operational ? 0x81d0a4 : 0x915c56).setInteractive();
+      marker.setDepth(screen.y).on('pointerdown', () => this.readBridge().onSelect(operator.id));
+      if (marker instanceof Phaser.GameObjects.Image && !operator.operational) marker.setTint(0x915c56);
       overlay.add(marker);
-      overlay.add(this.add.text(screen.x, screen.y - 34, operator.name.toUpperCase(), { fontFamily: 'monospace', fontSize: '11px', color: '#dcefe1' }).setOrigin(0.5));
+      overlay.add(this.add.text(screen.x, screen.y - 58, operator.name.toUpperCase(), { fontFamily: 'monospace', fontSize: '11px', color: '#dcefe1' }).setOrigin(0.5).setDepth(1000 + screen.y));
+      if (!operator.operational) overlay.add(this.add.text(screen.x, screen.y + 8, 'INCAPACITATED', { fontFamily: 'monospace', fontSize: '9px', color: '#e9a26e' }).setOrigin(0.5).setDepth(1000 + screen.y));
       if (operator.action) {
         const elapsed = view.tick - operator.action.startedAt;
         const total = operator.action.endsAt - operator.action.startedAt;
-        overlay.add(this.add.text(screen.x, screen.y + 12, `${operator.action.kind} ${Math.floor(elapsed * 100 / total)}%`, { fontFamily: 'monospace', fontSize: '10px', color: '#e7d386' }).setOrigin(0.5));
+        overlay.add(this.add.text(screen.x, screen.y + 12, `${operator.action.kind} ${Math.floor(elapsed * 100 / total)}%`, { fontFamily: 'monospace', fontSize: '10px', color: '#e7d386' }).setOrigin(0.5).setDepth(1000 + screen.y));
       }
     }
     for (const event of view.events.filter((entry) => entry.kind === 'IMPACT' && view.tick - entry.tick <= 3)) {
@@ -95,7 +114,8 @@ export class CommandScene extends Phaser.Scene {
       const contact = view.intel.find((entry) => entry.entityId === event.targetId);
       if (!contact) continue;
       const screen = project(contact.position);
-      overlay.add(this.add.circle(screen.x, screen.y, 23, 0, 0).setStrokeStyle(2, 0xe9a26e, 0.8));
+      overlay.add(this.add.circle(screen.x, screen.y, 23, 0, 0).setStrokeStyle(2, 0xe9a26e, 0.8).setDepth(2000));
     }
+    overlay.sort('depth');
   }
 }
