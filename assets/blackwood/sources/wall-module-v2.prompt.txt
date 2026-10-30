@@ -1,0 +1,4 @@
+Use case: precise-object-edit
+Edit target: supplied isolated Blackwood architectural asset.
+Change this long wall into ONE short repeatable cutaway wall module. Remove both tall end posts. Flat straight flush ends, no columns. Preserve sage plaster, charcoal baseboard/cap and the ascending diagonal orientation. NO floor.
+Critical cleanup: REMOVE ALL ambient haze, gray halo, glow, vignette and cast shadow outside the actual solid object. Every pixel outside the object silhouette must be completely transparent alpha zero. Crisp antialiased object boundary only. Solid materials should be opaque. Do not paint black or white as background. Preserve restrained matte low-poly style and soft upper-left lighting on the object itself. Centered full object, no clipping, text or watermark.

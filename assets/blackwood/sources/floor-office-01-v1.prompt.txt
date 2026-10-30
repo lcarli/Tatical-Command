@@ -1,0 +1,5 @@
+Use case: stylized-concept
+Asset type: isolated game asset source PNG for Blackwood.
+Reference image role: style/material/palette reference only; do not reproduce the full scene.
+Exactly ONE isolated flat office floor tile, a clean diamond rhombus width:height 68:38, orthographic isometric, no thickness or bevel, four straight edges. Muted charcoal green matte office stone/vinyl material, subtle texture with no internal grout, evenly lit to repeat seamlessly. No drop shadow, floor plane only, no props. Transparent outside diamond.
+Style: restrained stylized matte low-poly game render, crisp silhouette, soft upper-left light, no bloom, no text, no watermark. Genuine transparent background. This is a standalone production source, not an atlas.

@@ -1,0 +1,5 @@
+Use case: stylized-concept
+Asset type: isolated game asset source PNG for Blackwood.
+Reference image role: style/material/palette reference only; do not reproduce the full scene.
+Exactly ONE isolated modular office cutaway wall section, running from lower-left to upper-right on an isometric floor edge (projected edge vector +34,-19), short enough to expose characters. Sage gray matte plaster face, charcoal baseboard and thin dark cap, rectangular geometry, no windows, doors, pillars, floor or props. Orthographic isometric consistent with a floor diamond ratio 68:38. Entire module visible with margin. Transparent background.
+Style: restrained stylized matte low-poly game render, crisp silhouette, soft upper-left light, no bloom, no text, no watermark. Genuine transparent background. Standalone source, not an atlas.

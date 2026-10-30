@@ -1,0 +1,2 @@
+Use case: precise-object-edit
+Edit target: the most recent isolated office door image. Change ONLY the door opening: swing the brown leaf fully open by 90 degrees so the full doorway opening is visibly clear and genuinely transparent, with no backing panel. Preserve the frame, threshold, matte low-poly style, camera and palette. Also remove the exterior gray shadow halo so the module has a clean transparent silhouette. No people, text, floor platform or background. Standalone architectural game source PNG with genuine transparency.

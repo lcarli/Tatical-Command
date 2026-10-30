@@ -1,0 +1,5 @@
+Use case: stylized-concept
+Asset type: Blackwood isolated game sprite source.
+Input image 1 is style and proportion reference, not an edit target.
+Exactly one full-body Bravo 3 operator, adult with broad shoulders and stockier physique, larger utility backpack and squared vest silhouette. Same sage uniform, helmet with visor, gloves, boots and lowered compact carbine as reference operator. No aiming. Neutral idle southeast pose, elevated orthographic isometric view. Keep head/body proportions and lighting consistent with reference 1; silhouette distinguished by broad build and pack, not by weapon size. No labels or insignia.
+Full body centered, generous transparent margin; no cropping, floor, platform, cast ground shadow, lettering, watermark or background. Crisp matte low-poly render, soft upper-left illumination. Genuine alpha transparency.

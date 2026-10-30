@@ -1,0 +1,2 @@
+Use case: background-extraction
+Edit target: supplied blocked doorway. Extract ONLY the physical frame, crossed planks and stones. Remove ALL surrounding soft gray haze and shadow. This is a game sprite cutout, not a studio render. Outside the exact physical silhouette must be fully transparent. Keep shape, orientation, palette and internal lighting unchanged. No drop shadow, glow, new objects or background.

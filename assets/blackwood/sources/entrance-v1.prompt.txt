@@ -1,0 +1,5 @@
+Use case: stylized-concept
+Asset type: Blackwood isolated architectural game asset source.
+Input image is style/material reference only; do not reproduce scene.
+Exactly one isolated office entrance doorframe module, dark charcoal frame with simple muted brown door open inward by 90 degrees and small gray threshold. Doorway plane runs from screen lower-left to upper-right (isometric edge vector +34,-19), vertical jambs. Empty transparent opening. No surrounding walls, no floor platform, no people. Entire module visible with margin. Match reference office architecture, clean broad shapes. This is a visual asset, no new gameplay interaction.
+Orthographic isometric, floor diamond ratio 68:38, restrained matte low-poly materials, sage gray/charcoal/brown palette, soft upper-left lighting. Centered with margin. Genuine transparent background, no baked shadow halo, text, watermark or background.

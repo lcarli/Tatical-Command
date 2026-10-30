@@ -54,7 +54,9 @@ team intent; Bravo 1 scope assigns local operator orders. Scroll zooms the map,
 middle-button dragging pans. Playback speed changes ticks per wall-clock interval,
 not the fixed 100 ms logical step.
 
-The map uses placeholder shapes. Default Blackwood has one uncertain civilian
+The map uses placeholder geometry for the environment, with static PNG artwork
+for operators and currently identified civilian contacts. Unknown and stale
+contacts retain abstract markers. Default Blackwood has one uncertain civilian
 contact; threat, surrender, abstract response and resource cases are covered by
 headless encounter fixtures, not a separate combat scenario selector.
 
@@ -72,7 +74,9 @@ Unit tests run under Node. The simulation also has a separate TypeScript check
 without browser or Node ambient APIs. Playwright checks the shell in Chromium.
 The next step is a manual Blackwood playtest: compare two plans and two policies,
 check whether decisions are understandable and whether the pause is useful.
-There is no approved task 008 yet. GitHub CI runs these checks on pushes and pull
+Task 008 now covers the [Blackwood visual kit](tasks/008-blackwood-art-kit.md);
+its reference, specification and first character sprites are delivered and wired
+into Phaser; floor/architecture production remains pending. GitHub CI runs these checks on pushes and pull
 requests; see the repository's [Actions](https://github.com/lcarli/Tatical-Command/actions)
 for the latest result.
 

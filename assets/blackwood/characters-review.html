@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><title>Blackwood — revisão de personagens</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:32px;background:#101916;color:#dcefe1;font:14px system-ui,sans-serif}
+h1{font-size:24px;margin:0 0 8px}p{color:#b0c3b6;margin:8px 0 24px}.row{display:flex;gap:16px;margin-bottom:20px}
+.card{width:240px;border:1px solid #52705c;border-radius:8px;overflow:hidden}h2{font-size:14px;padding:12px;margin:0;background:#20382b}
+.samples{display:flex;justify-content:space-evenly;align-items:end;padding:12px 8px}.dark{background:#101916}.light{background:#e1e8df}
+.sprite{position:relative;line-height:0}.sprite:after{content:'';position:absolute;left:0;right:0;top:87.5%;border-top:1px dashed #da875c80}
+img{width:96px;height:128px}.small img{width:48px;height:64px}.caption{padding:8px 12px;font-size:12px;color:#b0c3b6;background:#20382b}
+</style>
+<h1>Blackwood · personagens estáticos</h1>
+<p>PNG 96 × 128 · exibição no jogo 48 × 64 · linha pontilhada = apoio em (48,112). Fontes preservadas.</p>
+<main id="cards"></main>
+<p>Revisão isolada em fundos claro/escuro. Não substitui teste de oclusão, seleção e escala na cena Phaser.</p>
+<script>
+const ids=['bravo-1','bravo-2','bravo-3','civilian'];
+const root=document.querySelector('#cards');
+for(const background of ['dark','light']){
+  const row=document.createElement('div'); row.className='row';
+  for(const id of ids){
+    const card=document.createElement('section'); card.className='card';
+    const title=document.createElement('h2'); title.textContent=id.toUpperCase(); card.append(title);
+    const samples=document.createElement('div'); samples.className='samples '+background;
+    for(const size of ['normal','small']){
+      const box=document.createElement('div');box.className='sprite '+size;
+      const image=document.createElement('img');image.src='../../public/assets/blackwood/characters/'+id+'-idle.png';image.alt=id+' parado';
+      box.append(image);samples.append(box);
+    }
+    const caption=document.createElement('div');caption.className='caption';caption.textContent='96 × 128 / 48 × 64 · '+background;
+    card.append(samples,caption);row.append(card);
+  } root.append(row);
+}
+</script></html>
